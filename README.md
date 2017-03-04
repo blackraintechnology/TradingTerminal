@@ -1,1 +1,1 @@
-# TradingTerminal
+# TradingJournal
