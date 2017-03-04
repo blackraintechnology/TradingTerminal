@@ -15,6 +15,11 @@ body{
 }
 
 
+#dashboard .accountInfo{ /* Just to show where the 12 units are on the browser*/
+			background: pink;
+			border: 1px solid purple;
+			height: 100px;
+}
 #dashboard .body{ /* dashboard storyboard css */
 	
 
