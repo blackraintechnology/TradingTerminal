@@ -1,0 +1,71 @@
+/*white, black and green theme, I'm thinking. Because money.*/
+
+body{
+    font-family: arial;
+    background-color:white;
+	  color:black;
+}
+.tabs{
+	background-color:#006600;
+	padding: 5px;
+	margin:10px 0 10px 0;
+}
+
+.tabs ul {
+	list-style-type: none;
+	padding:0px;
+	margin:0;
+}
+	
+	  
+.tabs li {
+    display:inline;
+	border: solid;
+	border-width: thin;
+	padding: 4px 0 4px 0;
+	margin:0;
+}
+	   
+.tabs a {
+	font-weight:bold;
+	color:white;
+	text-decoration: none;
+	padding: 2px;
+	margin:0;
+}
+	
+.tabs a:hover {
+	background-color: white;
+	color: #006600;
+	padding: 4px 2px 4px 2px;
+	margin:unset0;
+} 
+
+
+
+.header{
+	font-size: large;
+	height:40px;
+	margin:10px;
+	
+}
+
+	
+.header ul {
+	list-style-type: none;
+	padding:0px;
+	margin: 0px;
+}
+	
+	  
+.header li {
+  display:inline;
+	border-right: solid;
+	border-width: thin;
+	padding: 30px;
+	margin: 0;
+}
+
+.logo{
+	float:right;
+}
