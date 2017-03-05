@@ -100,7 +100,9 @@ body{
 	background: magenta;
 	border:; 1px dashed red;
 	height: 250px;
-}.journal_entry{
+}
+
+.journal_entry{
 	text-align:center;
 	padding:10px;
 	margin-top:20px;
