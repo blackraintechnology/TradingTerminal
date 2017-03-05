@@ -71,6 +71,18 @@ body{
 	float:right;
 }
 
+#dashboard .accountInfo{
+	background: pink;
+	border: 1px dashed red;
+	height: 100px;
+
+}
+
+#dashboard .buttonTab{
+	background: salmon;
+	border: 1px dashed red;
+	height: 40px;
+}
 .journal_entry{
 	text-align:center;
 	padding:10px;
