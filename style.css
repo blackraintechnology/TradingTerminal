@@ -83,7 +83,24 @@ body{
 	border: 1px dashed red;
 	height: 40px;
 }
-.journal_entry{
+
+#dashboard .accInfoExpanded{
+	background: yellow;
+	border: 1px dashed red;
+	height: 700px;
+}
+
+#dashboard .infoGraph{
+	background: lightblue;
+	border: 1px dashed red;
+	height: 450px;
+}
+
+#dashboard .newsfeed{
+	background: magenta;
+	border:; 1px dashed red;
+	height: 250px;
+}.journal_entry{
 	text-align:center;
 	padding:10px;
 	margin-top:20px;
