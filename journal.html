@@ -1,0 +1,119 @@
+
+<!DOCTYPE html> 
+
+<html lang="en">
+<head>
+     <title>Blackrain Journal - Entry</title>
+	 <link rel="stylesheet" href="style.css">
+	 
+</head>
+<body>
+	<div class="header">
+		<ul>
+			<li> Account Value </li>
+			<li> Gross </li>
+			<li> Net </li>
+			<li> Trades </li>
+			<li> Win% </li>
+		</ul>
+			<div class="logo"> Blackrain </div>
+	</div>
+	<div class="tabs">
+
+		 <ul>
+			
+			<li><a href="index.html"><span>Home</span></a></li>
+			<li><a href="view1.html"><span>Entry</span></a></li>
+			<li><a href="journal.html"><span>Journal</span></a></li>
+			<li><a href="analytics.html"><span>Analytics</span></a></li>
+			<li><a href="chart.html"><span>Chart</span></a></li>
+			
+		</ul>
+	</div>
+	<div style="width:80%; margin:auto;">
+	   <div class="entry_column"  style="box-shadow: 5px 5px 5px #225522; border-right:solid; border:solid; border-width:thin; float:left; margin-left:100px;">
+			<h2> Trade Entry </h2>
+			Ticker
+			<input type="text" id="ticker">
+			Entry Price
+			<input type="text" id="entry">
+			Exit Price
+			<input type="text" id="exit">
+			Quantity
+			<input type="text" id="quantity">
+			<div class="tabs" style="text-align:right;">
+				<ul>
+					
+					<li><a onClick='save()'><span>Save</span></a></li>
+					<li><a><span>Cancel</span></a></li>
+					
+				</ul>
+			</div>
+		</div>
+		
+		<div id="output_box" style="overflow:scroll;box-shadow: 5px 5px 5px #225522;border:solid; border-width:thin; float:left; width:600px; height:250px; padding:20px; margin:20px;">
+			No entries yet.
+		</div>
+		</div>
+
+<script>
+
+	var array = [];
+	var totalProfit=0.0;
+	var tableExists=false;
+	
+	function trade(ticker, entry, exit, quantity){
+				this.ticker=ticker;
+				this.entry=parseFloat(entry).toFixed(2);
+				this.exit=parseFloat(exit).toFixed(2);
+				this.quantity=parseInt(quantity);
+				this.cost=(quantity*entry).toFixed(2);
+				this.gross=(quantity*exit).toFixed(2);
+				this.profit=this.gross-this.cost;
+				totalProfit+=this.profit;
+				array.push(this);
+			};
+
+	function save()
+	{
+				var ticker= document.getElementById("ticker").value;
+				var entry= document.getElementById("entry").value;
+				var exit= document.getElementById("exit").value;
+				var quantity= document.getElementById("quantity").value;
+				
+				var output_box=document.getElementById("output_box")
+				
+				if (!(ticker==""||entry==""||exit==""||quantity=="")){
+				
+					new trade(ticker,entry,exit,quantity);
+					if (!tableExists){
+						output_box.innerHTML="<table id=\"output_table\" class=\"journal_output_table\"><tr><th>Ticker</th><th>Entry price</th><th>Exit price</th><th>Quantity</th><th>Cost</th><th>Gross</th><th>Profit</th></tr></table>";
+						output_box.innerHTML+="Total profit: <h4 style=\"display:inline\" id=\"profit\"></h5>";
+						tableExists=true;
+					}
+					var TRADE=array[array.length-1];
+					var table= document.getElementById("output_table");
+					var row = document.createElement('tr');
+					
+					row.innerHTML="<td>"+TRADE.ticker+"</td><td>"+TRADE.entry+"</td><td>"+TRADE.exit+"</td><td>"+TRADE.quantity+"</td><td>"+TRADE.cost+"</td><td>"+TRADE.gross+"</td><td>"+TRADE.profit.toFixed(2)+"</td>";
+					table.appendChild(row);
+					
+					
+					profit=document.getElementById("profit");
+					profit.innerHTML="$"+parseFloat(totalProfit).toFixed(2);
+					
+					if(totalProfit<0)
+						profit.style.color="red";
+					else if (totalProfit>0)
+						profit.style.color="green";
+						
+					
+					
+				}
+				
+	}
+	
+</script>
+		
+</body>
+</html>

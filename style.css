@@ -71,6 +71,8 @@ body{
 	float:right;
 }
 
+
+
 #dashboard .accountInfo{
 	background: pink;
 	border: 1px dashed red;
@@ -98,7 +100,7 @@ body{
 
 #dashboard .newsfeed{
 	background: magenta;
-	border:; 1px dashed red;
+	border: 1px dashed red;
 	height: 250px;
 }
 
@@ -119,7 +121,6 @@ body{
 	display:inline-block;
 	width:13%;
 	min-width:170px;
-	height:300px;
 	margin:0;
 	padding:10px 0 0 10px;
 	
@@ -129,4 +130,8 @@ input:not([type=checkbox]):not([type=radio]) {
 	display:block;
 	width:130px;
 	
+}
+
+.journal_output_table th{
+	padding:10px;
 }
