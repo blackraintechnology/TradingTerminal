@@ -56,62 +56,8 @@
 		</div>
 		</div>
 
-<script>
+<script src="journal.js">
 
-	var array = [];
-	var totalProfit=0.0;
-	var tableExists=false;
-	
-	function trade(ticker, entry, exit, quantity){
-				this.ticker=ticker;
-				this.entry=parseFloat(entry).toFixed(2);
-				this.exit=parseFloat(exit).toFixed(2);
-				this.quantity=parseInt(quantity);
-				this.cost=(quantity*entry).toFixed(2);
-				this.gross=(quantity*exit).toFixed(2);
-				this.profit=this.gross-this.cost;
-				totalProfit+=this.profit;
-				array.push(this);
-			};
-
-	function save()
-	{
-				var ticker= document.getElementById("ticker").value;
-				var entry= document.getElementById("entry").value;
-				var exit= document.getElementById("exit").value;
-				var quantity= document.getElementById("quantity").value;
-				
-				var output_box=document.getElementById("output_box")
-				
-				if (!(ticker==""||entry==""||exit==""||quantity=="")){
-				
-					new trade(ticker,entry,exit,quantity);
-					if (!tableExists){
-						output_box.innerHTML="<table id=\"output_table\" class=\"journal_output_table\"><tr><th>Ticker</th><th>Entry price</th><th>Exit price</th><th>Quantity</th><th>Cost</th><th>Gross</th><th>Profit</th></tr></table>";
-						output_box.innerHTML+="Total profit: <h4 style=\"display:inline\" id=\"profit\"></h5>";
-						tableExists=true;
-					}
-					var TRADE=array[array.length-1];
-					var table= document.getElementById("output_table");
-					var row = document.createElement('tr');
-					
-					row.innerHTML="<td>"+TRADE.ticker+"</td><td>"+TRADE.entry+"</td><td>"+TRADE.exit+"</td><td>"+TRADE.quantity+"</td><td>"+TRADE.cost+"</td><td>"+TRADE.gross+"</td><td>"+TRADE.profit.toFixed(2)+"</td>";
-					table.appendChild(row);
-					
-					
-					profit=document.getElementById("profit");
-					profit.innerHTML="$"+parseFloat(totalProfit).toFixed(2);
-					
-					if(totalProfit<0)
-						profit.style.color="red";
-					else if (totalProfit>0)
-						profit.style.color="green";
-						
-					
-					
-				}
-				
-	}
 	
 </script>
 		
