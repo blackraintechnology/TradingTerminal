@@ -12,7 +12,7 @@ function trade(ticker, entry, exit, quantity)
     this.cost=(quantity*entry).toFixed(2);
     this.gross=(quantity*exit).toFixed(2);
     this.profit=this.gross-this.cost;
-    totalProfit+=this.profit;	`		//this is probably reduntant at this point
+    totalProfit+=this.profit;			//this is probably reduntant at this point
 
 //VERY IMPORTANT - when a new object is created it gets stored onto array[]
     array.push(this);
