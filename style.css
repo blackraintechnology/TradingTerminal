@@ -200,8 +200,23 @@ element.style {
    resize: none;
 }
 
+.mainBlock {								/* The box for the gallary tag */
+	box-shadow: 5px 5px 5px #225522;
+	border: 2px solid black;
+	float: center;
+	max-width: 160;
+	padding: 10px: 
+	margin: 0;
+	padding: 1em;
+	text-align: center;
+}
 
-
+.gallaryBox{								/* This will show the files that the user has uploaded */
+ float: center;
+ padding: 10px;
+ margin: 10px; 
+ box-shadow: 5px 5px 5px #225522;
+}
 
 /*for datepicker to work*/
 .ui-widget.ui-widget-content {
