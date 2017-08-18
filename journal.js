@@ -36,6 +36,7 @@ function save()
         new trade(ticker,entry,exit,quantity);
     }
 	
+	
 
     //call function to display the array
     print_table();
