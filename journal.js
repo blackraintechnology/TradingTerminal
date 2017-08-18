@@ -35,6 +35,7 @@ function save()
 	//add a new trade onto array
         new trade(ticker,entry,exit,quantity);
     }
+	
 
     //call function to display the array
     print_table();
