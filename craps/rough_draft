@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Craps</title>
+</head>
+
+<body>
+
+	<script language="javascript" type="text/javascript">
+		
+		function roll(){
+			document.getElementById('4').style.color='black';
+			document.getElementById('5').style.color='black';
+			document.getElementById('6').style.color='black';
+			document.getElementById('8').style.color='black';
+			document.getElementById('9').style.color='black';
+			document.getElementById('10').style.color='black';
+			
+			
+			
+			
+			one = Math.ceil(Math.random() * 6);
+			two = Math.ceil(Math.random() * 6);
+			document.getElementById('log').innerHTML=one+two+'<br>';
+			
+			if(one+two==7)
+			{
+				document.getElementById('log').innerHTML+='Payout!<br>';
+			}
+			else if(one+two==4)
+			{
+				document.getElementById('4').style.color='red';
+			}
+			else if(one+two==5)
+			{
+				document.getElementById('5').style.color='red';
+			}
+			else if(one+two==6)
+			{
+				document.getElementById('6').style.color='red';
+			}
+			else if(one+two==8)
+			{
+				document.getElementById('8').style.color='red';
+			}
+			else if(one+two==9)
+			{
+				document.getElementById('9').style.color='red';
+			}
+			else if(one+two==10)
+			{
+				document.getElementById('10').style.color='red';
+			}
+			
+		}
+		
+		
+		
+	</script>
+	<table>
+		<tr>
+		<td id='4'>4<td>
+		<td id='5'>5</td>
+		<td id='6'>6</td>
+		<td id='8'>8</td>
+		<td id='9'>9</td>
+		<td id='10'>10</td>
+	</table>
+	<div id='log'></div>
+	<input type='button' value='Roll' onclick='roll();'>
+
+</body>
+</html>
